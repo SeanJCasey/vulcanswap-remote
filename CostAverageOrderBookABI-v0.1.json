@@ -1,0 +1,735 @@
+[
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "minBatches",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+    "signature": "0x42d0e57c"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "idToCostAverageOrder",
+    "outputs": [
+      {
+        "name": "account",
+        "type": "address"
+      },
+      {
+        "name": "targetCurrency",
+        "type": "address"
+      },
+      {
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "name": "frequency",
+        "type": "uint256"
+      },
+      {
+        "name": "lastConversionTimestamp",
+        "type": "uint256"
+      },
+      {
+        "name": "sourceCurrencyBalance",
+        "type": "uint256"
+      },
+      {
+        "name": "targetCurrencyConverted",
+        "type": "uint256"
+      },
+      {
+        "name": "batches",
+        "type": "uint8"
+      },
+      {
+        "name": "batchesExecuted",
+        "type": "uint8"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+    "signature": "0x5c70e154"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "nextId",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+    "signature": "0x61b8ce8c"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "renounceOwnership",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "signature": "0x715018a6"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "owner",
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+    "signature": "0x8da5cb5b"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "isOwner",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+    "signature": "0x8f32d59b"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "minAmount",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+    "signature": "0x9b2cb5d8"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "",
+        "type": "address"
+      },
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "accountToOrderIds",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+    "signature": "0xbde84aeb"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "maxBatches",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+    "signature": "0xc86377dc"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "minFrequency",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint32"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+    "signature": "0xce8d0307"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "transferOwnership",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "signature": "0xf2fde38b"
+  },
+  {
+    "inputs": [
+      {
+        "name": "_uniswapFactoryAddress",
+        "type": "address"
+      }
+    ],
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "constructor",
+    "signature": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "_account",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "_orderId",
+        "type": "uint256"
+      }
+    ],
+    "name": "NewOrder",
+    "type": "event",
+    "signature": "0xef737f0fa1786a14bb1cc1ab889557c33fcea01691acf7e7e03e850aeff60d27"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "_account",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "_orderId",
+        "type": "uint256"
+      }
+    ],
+    "name": "OrderConversion",
+    "type": "event",
+    "signature": "0x9d40ca1b3e814a14204b5f836713067684a9facb9cdcf1524d819d5ecccce7d3"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "_account",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "_orderId",
+        "type": "uint256"
+      }
+    ],
+    "name": "CancelOrder",
+    "type": "event",
+    "signature": "0xc0e68d6b69f741c21e955cad2ae4d505b6f6735c7e7b278251b3f6283a5f07eb"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "previousOwner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event",
+    "signature": "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_id",
+        "type": "uint256"
+      }
+    ],
+    "name": "cancelOrder",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "signature": "0x514fcac7"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_amount",
+        "type": "uint256"
+      },
+      {
+        "name": "_targetCurrency",
+        "type": "address"
+      },
+      {
+        "name": "_frequency",
+        "type": "uint256"
+      },
+      {
+        "name": "_batches",
+        "type": "uint8"
+      }
+    ],
+    "name": "createOrder",
+    "outputs": [
+      {
+        "name": "id_",
+        "type": "uint256"
+      }
+    ],
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "function",
+    "signature": "0x7c61c1e7"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "getFeeBalance",
+    "outputs": [
+      {
+        "name": "feeBalance_",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+    "signature": "0xd4c30ceb"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_id",
+        "type": "uint256"
+      }
+    ],
+    "name": "getOrder",
+    "outputs": [
+      {
+        "name": "id_",
+        "type": "uint256"
+      },
+      {
+        "name": "amount_",
+        "type": "uint256"
+      },
+      {
+        "name": "targetCurrency_",
+        "type": "address"
+      },
+      {
+        "name": "frequency_",
+        "type": "uint256"
+      },
+      {
+        "name": "batches_",
+        "type": "uint8"
+      },
+      {
+        "name": "batchesExecuted_",
+        "type": "uint8"
+      },
+      {
+        "name": "lastConversionTimestamp_",
+        "type": "uint256"
+      },
+      {
+        "name": "targetCurrencyConverted_",
+        "type": "uint256"
+      },
+      {
+        "name": "sourceCurrencyBalance_",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+    "signature": "0xd09ef241"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "getOrderCount",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+    "signature": "0x8d0a5fbb"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_account",
+        "type": "address"
+      }
+    ],
+    "name": "getOrderCountForAccount",
+    "outputs": [
+      {
+        "name": "count_",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+    "signature": "0x91fe20fe"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_account",
+        "type": "address"
+      },
+      {
+        "name": "_index",
+        "type": "uint256"
+      }
+    ],
+    "name": "getOrderForAccountIndex",
+    "outputs": [
+      {
+        "name": "id_",
+        "type": "uint256"
+      },
+      {
+        "name": "amount_",
+        "type": "uint256"
+      },
+      {
+        "name": "targetCurrency_",
+        "type": "address"
+      },
+      {
+        "name": "frequency_",
+        "type": "uint256"
+      },
+      {
+        "name": "batches_",
+        "type": "uint8"
+      },
+      {
+        "name": "batchesExecuted_",
+        "type": "uint8"
+      },
+      {
+        "name": "lastConversionTimestamp_",
+        "type": "uint256"
+      },
+      {
+        "name": "targetCurrencyConverted_",
+        "type": "uint256"
+      },
+      {
+        "name": "sourceCurrencyBalance_",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+    "signature": "0x6d94fd0f"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "getOrderParamLimits",
+    "outputs": [
+      {
+        "name": "minAmount_",
+        "type": "uint256"
+      },
+      {
+        "name": "minFrequency_",
+        "type": "uint32"
+      },
+      {
+        "name": "minBatches_",
+        "type": "uint8"
+      },
+      {
+        "name": "maxBatches_",
+        "type": "uint8"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+    "signature": "0x8d59ca4a"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "getStatTotals",
+    "outputs": [
+      {
+        "name": "orders_",
+        "type": "uint256"
+      },
+      {
+        "name": "conversions_",
+        "type": "uint256"
+      },
+      {
+        "name": "managedEth_",
+        "type": "uint256"
+      },
+      {
+        "name": "fees_",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+    "signature": "0x6fc66b99"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "getTotalFeesCollected",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+    "signature": "0x46876508"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_maxBatches",
+        "type": "uint8"
+      }
+    ],
+    "name": "setMaxBatches",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "signature": "0x1b6671fd"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_minAmount",
+        "type": "uint256"
+      }
+    ],
+    "name": "setMinAmount",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "signature": "0x897b0637"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_minBatches",
+        "type": "uint8"
+      }
+    ],
+    "name": "setMinBatches",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "signature": "0xefa28b03"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_minFrequency",
+        "type": "uint32"
+      }
+    ],
+    "name": "setMinFrequency",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "signature": "0x6c81e659"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_remoteCaller",
+        "type": "address"
+      }
+    ],
+    "name": "setRemoteCaller",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "signature": "0xea2ba5c4"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "withdrawFees",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "signature": "0x476343ee"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_id",
+        "type": "uint256"
+      }
+    ],
+    "name": "checkConversionDue",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+    "signature": "0x838bac1e"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "checkConversionDueAll",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256[]"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+    "signature": "0x20580f42"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_idStart",
+        "type": "uint256"
+      },
+      {
+        "name": "_count",
+        "type": "uint16"
+      }
+    ],
+    "name": "checkConversionDueBatch",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256[]"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+    "signature": "0x4431189c"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_id",
+        "type": "uint256"
+      }
+    ],
+    "name": "executeDueConversion",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "signature": "0x1390dc54"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "executeDueConversions",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "signature": "0x2e84767e"
+  }
+]
