@@ -1,0 +1,737 @@
+[
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "acceptedCurrencyInfo",
+    "outputs": [
+      {
+        "name": "minAmount",
+        "type": "uint256"
+      },
+      {
+        "name": "maxAmount",
+        "type": "uint256"
+      },
+      {
+        "name": "state",
+        "type": "uint8"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "idToCompoundLoan",
+    "outputs": [
+      {
+        "name": "balanceCTokens",
+        "type": "uint256"
+      },
+      {
+        "name": "balanceUnderlying",
+        "type": "uint256"
+      },
+      {
+        "name": "underlying",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "minBatches",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "idToCostAverageOrder",
+    "outputs": [
+      {
+        "name": "account",
+        "type": "address"
+      },
+      {
+        "name": "sourceCurrency",
+        "type": "address"
+      },
+      {
+        "name": "targetCurrency",
+        "type": "address"
+      },
+      {
+        "name": "state",
+        "type": "uint8"
+      },
+      {
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "name": "frequency",
+        "type": "uint256"
+      },
+      {
+        "name": "createdTimestamp",
+        "type": "uint256"
+      },
+      {
+        "name": "lastConversionTimestamp",
+        "type": "uint256"
+      },
+      {
+        "name": "sourceCurrencyBalance",
+        "type": "uint256"
+      },
+      {
+        "name": "sourceCurrencyConverted",
+        "type": "uint256"
+      },
+      {
+        "name": "targetCurrencyConverted",
+        "type": "uint256"
+      },
+      {
+        "name": "batches",
+        "type": "uint8"
+      },
+      {
+        "name": "batchesExecuted",
+        "type": "uint8"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "renounceOwnership",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "owner",
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "isOwner",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "",
+        "type": "address"
+      },
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "accountToOrderIds",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "maxBatches",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "minFrequency",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint32"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "underlyingToCToken",
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "transferOwnership",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "name": "_uniswapFactoryAddress",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "fallback"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "_account",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "_orderId",
+        "type": "uint256"
+      }
+    ],
+    "name": "NewOrder",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "_account",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "_orderId",
+        "type": "uint256"
+      }
+    ],
+    "name": "OrderConversion",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "_account",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "_orderId",
+        "type": "uint256"
+      }
+    ],
+    "name": "CancelOrder",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "_account",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "_orderId",
+        "type": "uint256"
+      }
+    ],
+    "name": "CompleteOrder",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "previousOwner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_id",
+        "type": "uint256"
+      }
+    ],
+    "name": "cancelOrder",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "checkConversionDueAll",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256[]"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_amount",
+        "type": "uint256"
+      },
+      {
+        "name": "_sourceCurrency",
+        "type": "address"
+      },
+      {
+        "name": "_targetCurrency",
+        "type": "address"
+      },
+      {
+        "name": "_frequency",
+        "type": "uint256"
+      },
+      {
+        "name": "_batches",
+        "type": "uint8"
+      }
+    ],
+    "name": "createOrder",
+    "outputs": [
+      {
+        "name": "id_",
+        "type": "uint256"
+      }
+    ],
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_currency",
+        "type": "address"
+      },
+      {
+        "name": "_minAmount",
+        "type": "uint256"
+      },
+      {
+        "name": "_maxAmount",
+        "type": "uint256"
+      }
+    ],
+    "name": "createSourceCurrency",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "executeDueConversions",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_currency",
+        "type": "address"
+      }
+    ],
+    "name": "getFeesCollected",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_account",
+        "type": "address"
+      },
+      {
+        "name": "_index",
+        "type": "uint256"
+      }
+    ],
+    "name": "getOrderForAccountIndex",
+    "outputs": [
+      {
+        "name": "id_",
+        "type": "uint256"
+      },
+      {
+        "name": "amount_",
+        "type": "uint256"
+      },
+      {
+        "name": "sourceCurrency_",
+        "type": "address"
+      },
+      {
+        "name": "targetCurrency_",
+        "type": "address"
+      },
+      {
+        "name": "state_",
+        "type": "uint8"
+      },
+      {
+        "name": "frequency_",
+        "type": "uint256"
+      },
+      {
+        "name": "batches_",
+        "type": "uint8"
+      },
+      {
+        "name": "batchesExecuted_",
+        "type": "uint8"
+      },
+      {
+        "name": "lastConversionTimestamp_",
+        "type": "uint256"
+      },
+      {
+        "name": "targetCurrencyConverted_",
+        "type": "uint256"
+      },
+      {
+        "name": "sourceCurrencyConverted_",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "getOrderParamLimits",
+    "outputs": [
+      {
+        "name": "minFrequency_",
+        "type": "uint32"
+      },
+      {
+        "name": "minBatches_",
+        "type": "uint8"
+      },
+      {
+        "name": "maxBatches_",
+        "type": "uint8"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_maxBatches",
+        "type": "uint8"
+      }
+    ],
+    "name": "setMaxBatches",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_minBatches",
+        "type": "uint8"
+      }
+    ],
+    "name": "setMinBatches",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_minFrequency",
+        "type": "uint32"
+      }
+    ],
+    "name": "setMinFrequency",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_currency",
+        "type": "address"
+      },
+      {
+        "name": "_cToken",
+        "type": "address"
+      }
+    ],
+    "name": "updateSourceCurrencyCToken",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_currency",
+        "type": "address"
+      },
+      {
+        "name": "_isActive",
+        "type": "bool"
+      }
+    ],
+    "name": "updateSourceCurrencyIsActive",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_currency",
+        "type": "address"
+      },
+      {
+        "name": "_minAmount",
+        "type": "uint256"
+      },
+      {
+        "name": "_maxAmount",
+        "type": "uint256"
+      }
+    ],
+    "name": "updateSourceCurrencyLimits",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_currency",
+        "type": "address"
+      }
+    ],
+    "name": "withdrawFees",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_id",
+        "type": "uint256"
+      }
+    ],
+    "name": "checkConversionDue",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_id",
+        "type": "uint256"
+      }
+    ],
+    "name": "executeDueConversion",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "getOrderCount",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_account",
+        "type": "address"
+      }
+    ],
+    "name": "getOrderCountForAccount",
+    "outputs": [
+      {
+        "name": "count_",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
