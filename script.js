@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const Web3 = require('web3');
-const contractABI = require('./CostAverageOrderBookABI-v0.1.json');
+const contractABI = require('./CostAverageOrderBookABI-v0.2.json');
 
 const provider = process.env.PROVIDER;
 const privateKey = process.env.PRIVATE_KEY;
@@ -18,7 +18,7 @@ const contract = new web3.eth.Contract(contractABI, contractAddress);
 //     .catch(err => console.log(err));
 
 // B. Execute after querying for all due conversions.
-contract.methods.checkConversionDueAll().call({ from: address })
+contract.methods.checkConversionDueAll().call()
   .then(conversionDueMap => executeDueConversionsFromMapping(conversionDueMap))
   .catch(err => console.log(err));
 
@@ -36,14 +36,17 @@ const executeDueConversionsFromMapping = conversionDueMap => {
         // Create and sign raw tx
         const tx = {
           to: contractAddress,
-          gas: 200000,
+          gas: 2000000,
           data: contract.methods.executeDueConversion(orderId).encodeABI(),
           nonce: txCount,
         };
         account.signTransaction(tx)
           .then(signed => web3.eth.sendSignedTransaction(signed.rawTransaction))
           .then(() => console.log('executed orderId:', orderId))
-          .catch(err => console.log('ERROR orderId:', err));
+          .catch(err => {
+            console.log('ERROR orderId:', orderId)
+            console.log(err);
+          });
 
         // Increment nonce
         txCount++;
